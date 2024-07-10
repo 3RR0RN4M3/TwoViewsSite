@@ -1,0 +1,466 @@
+/* for fonts */
+@font-face {
+  font-family: Futura;
+  src: url("Fonts/FuturaLT-Light.woff2") format("WOFF2");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: Futura;
+  src: url("Fonts/FuturaLT.woff2") format("WOFF2");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Futura;
+  src: url("Fonts/FuturaLT-Heavy.woff2") format("WOFF2");
+  font-weight: bold;
+}
+
+/* for calculating padding */
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-weight: normal;
+}
+
+p {
+  font-weight: 300;
+}
+
+header {
+  padding: 0px;
+  padding-left: 50px;
+
+  /* text-align: center; */
+}
+
+nav {
+  padding: 50px;
+}
+
+.dropdownNav {
+  display: none;
+  padding-right: 50px;
+}
+
+/* the dropdown list */
+.dropdown {
+  padding: 0%;
+  float: right;
+}
+
+.dropdown button {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+  border: none;
+
+  /* debug */
+  /* border: 5px solid white; */
+  transition-duration: .15s;
+}
+
+.dropdown:hover .content {
+  display: block;
+}
+
+.dropdown:hover button {
+  transform: scale(1.3);
+}
+
+.dropdown .content {
+  display: none;
+  position: absolute;
+  transform: translateX(-160px);
+
+  background-color: hsla(0, 0%, 0%, .7);
+
+}
+
+.dropdown .content button,
+.dropdown .content a {
+  font-family: inherit;
+  display: block;
+  background-color: hsla(0, 0%, 0%, 0);
+  color: white;
+  cursor: pointer;
+  border: none;
+  /* text-align: center; */
+
+  /* debug */
+  /* border: 5px solid white; */
+  transition-duration: .1s;
+
+}
+
+.dropdown .content button {
+  font-size: 20px;
+  padding: 25px 50px;
+}
+
+.dropdown .content a {
+  text-decoration: none;
+  font-size: 25px;
+  padding: 15px 76px;
+  background-color: hsla(0, 0%, 0%, 0.5);
+}
+
+.dropdown .content button:hover,
+.dropdown .content a:hover {
+  text-shadow: 0px 0px 5px white;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsla(0, 0%, 0%, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsla(0, 0%, 40%, 0.4);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsla(0, 0%, 50%, 0.4);
+}
+
+/* main body of site containing everything */
+body {
+  margin: 0px;
+  font-family: Futura;
+  font-size: 20px;
+  color: white;
+  background-color: black;
+}
+
+/* main contents containing everything besides header, banner and footer */
+main {
+  padding: 0px;
+}
+
+/* section of contents in main */
+section {
+  padding: 50px;
+}
+
+footer {
+  display: block;
+  clear: both;
+  padding: 15px;
+  text-align: center;
+}
+
+/* for navbar */
+.navbar ul {
+  font-weight: normal;
+  /* background-color: hsl(0, 0%, 20%); */
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 25px;
+  display: block;
+  text-align: center;
+}
+
+.navbar li {
+  float: right;
+}
+
+.navbar a:hover {
+  /* background-color: hsl(0, 0%, 30%); */
+  background-color: hsl(0, 0%, 10%);
+}
+
+.banner {
+  width: 100%;
+  text-align: center;
+  text-justify: auto;
+  background-image: url("Image/LogoBG.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  /* background-attachment: fixed; */
+  background-size: cover;
+}
+
+.twoColumn {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/* childSub is for table */
+.twoColumn .child,
+.twoColumn .childSub {
+  flex-basis: 50%;
+  padding-right: 5%;
+
+}
+
+/* no padding for right most element for two column */
+.twoColumn .child+.child {
+  padding-right: 0%;
+}
+
+/* for colors */
+.grey {
+  background-color: hsl(0, 0%, 10%);
+}
+
+.lightGrey {
+  background-color: hsl(0, 0%, 40%);
+}
+
+.blue {
+  background-color: hsl(195, 100%, 50%);
+}
+
+.red {
+  background-color: hsl(0, 95%, 65%);
+}
+
+/* for table */
+/* keyboard table */
+.customTableK th,
+.customTableK td {
+  padding-top: 20px;
+  padding-bottom: 40px;
+
+  /* debug */
+  /* border: 5px solid white; */
+}
+
+/* gamepad table */
+.customTableG th,
+.customTableG td {
+  padding-top: 0px;
+  padding-bottom: 20px;
+
+  /* debug */
+  /* border: 5px solid white; */
+}
+
+.icon,
+.iconText {
+  display: flex;
+}
+
+/* keycap container */
+.iconText span {
+  width: 50px;
+  height: 50px;
+  border: 3px solid white;
+  border-radius: 25%;
+
+  font-size: 20px;
+  text-align: center;
+
+  transform: translateX(15px) scale(1.45);
+}
+
+/* for forms */
+input {
+  border: none;
+  padding: 12px;
+  width: 50%;
+}
+
+/* input box styling */
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid white;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+  font-family: inherit;
+  font-size: 18px;
+  color: white;
+  background-color: hsl(0, 0%, 10%);
+}
+
+/* disable deafult checkbox */
+input[type="checkbox"] {
+  display: none;
+  width: 50px;
+  height: 25px;
+  padding: 0px;
+  transition: translateY(50px);
+  /* margin: 10px 10px 0px 20px; */
+}
+
+/* the new checkbox (just border) */
+.customCheckbox {
+  position: relative;
+  cursor: pointer;
+  display: inline-flex;
+  color: white;
+  vertical-align: middle;
+  padding-left: 35px;
+}
+
+.customCheckbox:before {
+  height: 25px;
+  width: 25px;
+  border: 2px solid white;
+  border-radius: 25%;
+}
+
+/* the tick for new checkbox */
+.customCheckbox span {
+  height: 25px;
+  width: 25px;
+  border-radius: 20%;
+  border: 3px solid white;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+
+  transition-duration: .2s;
+}
+
+.customCheckbox span:after {
+  content: "";
+  height: 10px;
+  width: 10px;
+  border-radius: 20%;
+  background: white;
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+
+  transition-duration: .2s;
+}
+
+.customCheckbox input[type="checkbox"]:checked~span:after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.customCheckbox input[type="checkbox"]:disabled~span {
+  border: 3px solid hsla(0, 0%, 100%, 0.4);
+}
+
+.customCheckbox input[type="checkbox"]:disabled~.cBoxTxt {
+  color: hsla(0, 0%, 100%, 0.4);
+}
+
+/* the text for checkbox */
+.cBoxTxt {
+  color: white;
+
+  transition-duration: .2s;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  width: 100%;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  font-family: inherit;
+  font-size: 18px;
+  color: white;
+  text-align: center;
+
+  transition-duration: .2s;
+}
+
+input[type="submit"] {
+  background-color: hsl(195, 100%, 50%);
+}
+
+input[type="reset"] {
+  background-color: hsl(0, 95%, 65%);
+}
+
+input[type="submit"]:hover {
+  background-color: hsl(195, 70%, 40%);
+}
+
+input[type="reset"]:hover {
+  background-color: hsl(0, 55%, 50%);
+}
+
+/* add more padding */
+.shorten {
+  padding-left: 5%;
+  width: 95%;
+
+  align-items: center;
+  justify-content: center;
+}
+
+/* for animation */
+.fadeInElement {
+  animation-name: fadeInFromBelow;
+  animation-duration: 1s;
+}
+
+@keyframes fadeInFromBelow {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+/* show hamburger icon and show one column for table */
+@media only screen and (max-width: 857px) {
+  .twoColumn .childSub {
+    flex-basis: 100%;
+    padding: 0px;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .dropdownNav {
+    display: block;
+  }
+}
+
+/* show one column */
+@media only screen and (max-width: 576px) {
+
+  .twoColumn .child {
+    flex-basis: 100%;
+    padding: 0px;
+  }
+}
